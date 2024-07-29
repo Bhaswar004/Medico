@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/acme"
+        android:text="Sign-up"
+        android:textColor="@color/purple"
+        android:textSize="64sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/userName"
+        android:layout_width="376dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/edit_text_shape"
+        android:elevation="10dp"
+        android:ems="10"
+        android:fontFamily="@font/acme"
+        android:hint="Username"
+        android:inputType="text"
+        android:paddingStart="18dp"
+        app:layout_constraintStart_toStartOf="@+id/email"
+        app:layout_constraintTop_toBottomOf="@+id/email"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="376dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_text_shape"
+        android:elevation="10dp"
+        android:ems="10"
+        android:fontFamily="@font/acme"
+        android:hint="Your E-Mail"
+        android:inputType="text"
+        android:paddingStart="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/edit_text_shape"
+        android:elevation="10dp"
+        android:ems="10"
+        android:fontFamily="@font/acme"
+        android:hint="password"
+        android:inputType="textPassword"
+        android:paddingStart="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/userName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/userName"
+        app:layout_constraintTop_toBottomOf="@+id/userName" />
+
+    <EditText
+        android:id="@+id/repeatPassword"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/edit_text_shape"
+        android:elevation="10dp"
+        android:ems="10"
+        android:fontFamily="@font/acme"
+        android:hint="Repeat-password"
+        android:inputType="textPassword"
+        android:paddingStart="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/userName"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/userName"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
+
+
+    <Button
+        android:id="@+id/sign_in_button"
+        android:layout_width="160dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="22dp"
+        android:backgroundTint="@color/purple"
+        android:fontFamily="@font/acme"
+        android:hapticFeedbackEnabled="false"
+        android:text="Sign-in"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/register_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/register_button"
+        android:layout_width="160dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="22dp"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:fontFamily="@font/acme"
+        android:text="Register"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/sign_in_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

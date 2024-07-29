@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "158694660907",
+    "project_id": "login-sign-up-with-fireb-94de1",
+    "storage_bucket": "login-sign-up-with-fireb-94de1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:158694660907:android:ed2757715358a84b6a036e",
+        "android_client_info": {
+          "package_name": "eu.tutorials.loginandsignupwithfirebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBn9Ppfs_OMm7rECsaU9DxYVJH6p_NB2VY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
