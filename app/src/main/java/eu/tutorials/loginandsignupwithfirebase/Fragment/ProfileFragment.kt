@@ -1,60 +1,116 @@
 package eu.tutorials.loginandsignupwithfirebase.Fragment
 
+import android.annotation.SuppressLint
+import android.app.Activity
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.Toast
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
 import eu.tutorials.loginandsignupwithfirebase.R
+import java.util.UUID
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ProfileFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ProfileFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var profileImageView: ImageView
+    private lateinit var nameEditText: EditText
+    private lateinit var addressEditText: EditText
+    private lateinit var emailEditText: EditText
+    private lateinit var phoneNumberEditText: EditText
+    private lateinit var saveButton: Button
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private val PICK_IMAGE_REQUEST = 1
+    private var imageUri: Uri? = null
 
+
+
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+
+        val view =  inflater.inflate(R.layout.fragment_profile, container, false)
+
+        profileImageView = view.findViewById(R.id.profile_image)
+        nameEditText = view.findViewById(R.id.name_id)
+        addressEditText = view.findViewById(R.id.address_id)
+        emailEditText = view.findViewById(R.id.email_id)
+        phoneNumberEditText = view.findViewById(R.id.phone_id)
+        saveButton = view.findViewById(R.id.button)
+
+
+        profileImageView.setOnClickListener{
+            openGallery()
+        }
+        saveButton.setOnClickListener {
+            saveInformation()
+        }
+        return view
+    }
+
+    private fun openGallery(){
+        val intent = Intent(Intent.ACTION_PICK)
+        intent.type = "image/*"
+        startActivityForResult(intent, PICK_IMAGE_REQUEST)
+    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null && data.data != null) {
+            imageUri = data.data
+            profileImageView.setImageURI(imageUri)
+        }
+    }
+
+    private fun saveInformation() {
+        val name = nameEditText.text.toString().trim()
+        val address = addressEditText.text.toString().trim()
+        val email = emailEditText.text.toString().trim()
+        val phoneNumber = phoneNumberEditText.text.toString().trim()
+
+
+        val userMap = hashMapOf(
+            "name" to name,
+            "address" to address,
+            "email" to email,
+            "phoneNumber" to phoneNumber
+        )
+        val db = FirebaseFirestore.getInstance()
+        db.collection("users")
+            .add(userMap)
+            .addOnSuccessListener {
+                // Handle successful save
+                Toast.makeText(requireContext(), "Information saved successfully", Toast.LENGTH_SHORT).show()
+            }
+            .addOnFailureListener { e ->
+                // Handle failure
+                Toast.makeText(requireContext(), "Failed to save information: ${e.message}", Toast.LENGTH_SHORT).show()
+
+            }
+    }
+
+    private fun uploadImageToFirebase() {
+        val storageRef = FirebaseStorage.getInstance().reference.child("profile_images/${UUID.randomUUID()}.jpg")
+        imageUri?.let {
+            storageRef.putFile(it)
+                .addOnSuccessListener {
+                    Toast.makeText(requireContext(), "Image uploaded successfully", Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener { e ->
+                    Toast.makeText(requireContext(), "Failed to upload image: ${e.message}", Toast.LENGTH_SHORT).show()
+                }
+        }
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ProfileFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ProfileFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        fun newInstance() = ProfileFragment()
     }
 }
