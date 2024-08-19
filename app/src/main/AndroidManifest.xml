@@ -15,6 +15,12 @@
         android:theme="@style/Theme.LoginAndSignUpWithFireBase"
         tools:targetApi="31">
         <activity
+            android:name=".ChatPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".chat_doctor"
+            android:exported="false" />
+        <activity
             android:name=".SignUpActivity"
             android:exported="false" />
         <activity
@@ -22,12 +28,10 @@
             android:exported="false" />
         <activity
             android:name=".WelcomeScreen"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
