@@ -17,6 +17,20 @@
         android:theme="@style/Theme.LoginAndSignUpWithFireBase"
         tools:targetApi="31">
         <activity
+
+            android:name=".Confirmation"
+            android:exported="false" />
+        <activity
+            android:name=".Booking"
+            android:exported="false"
+            android:label="@string/title_activity_booking"
+            android:theme="@style/Theme.LoginAndSignUpWithFireBase" />
+        <activity
+            android:name=".AllDoctorsActivity"
+            android:exported="false" />
+        <activity
+
+
             android:name=".SignUpActivity"
             android:exported="false" />
         <activity
@@ -24,9 +38,13 @@
             android:exported="false" />
         <activity
             android:name=".WelcomeScreen"
+
+            android:exported="true" />
+
             android:exported="true">
 
         </activity>
+
         <activity
             android:name=".MainActivity"
             android:exported="true" >

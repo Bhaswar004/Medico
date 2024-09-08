@@ -29,7 +29,7 @@ class HomeFragment : Fragment() {
 
         // Create image list for the first slider
         val imageList1 = ArrayList<SlideModel>().apply {
-            add(SlideModel("https://bit.ly/2YoJ77H", "The animal population decreased by 58 percent in 42 years.", ScaleTypes.CENTER_CROP))
+            add(SlideModel("https://bit.ly/2YoJ77H", "", ScaleTypes.CENTER_CROP))
             add(SlideModel("https://bit.ly/2BteuF2", "Elephants and tigers may become extinct.", ScaleTypes.CENTER_CROP))
             add(SlideModel("https://bit.ly/3fLJf72", "And people do that.", ScaleTypes.CENTER_CROP))
         }
@@ -48,19 +48,18 @@ class HomeFragment : Fragment() {
         imageSlider2.setImageList(imageList2)
 
         val allDoctorScreenButton = view.findViewById<Button>(R.id.button)
-        allDoctorScreenButton.setOnClickListener{
-            val Intent = Intent(requireContext(), AllDoctorsActivity::class.java)
-            startActivity(Intent)
+        allDoctorScreenButton.setOnClickListener {
+            val intent = Intent(requireContext(), AllDoctorsActivity::class.java)
+            startActivity(intent)
         }
+
         val allDoctorScreenButton2 = view.findViewById<TextView>(R.id.textView24)
-        allDoctorScreenButton2.setOnClickListener{
-            val Intent = Intent(requireContext(), AllDoctorsActivity::class.java)
-            startActivity(Intent)
+        allDoctorScreenButton2.setOnClickListener {
+            val intent = Intent(requireContext(), AllDoctorsActivity::class.java)
+            startActivity(intent)
         }
+
         return view
-
-
-
     }
 
     companion object {

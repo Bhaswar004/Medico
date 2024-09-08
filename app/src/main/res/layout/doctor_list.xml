@@ -1,27 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <RelativeLayout
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp"
+    android:background="@drawable/shape_2"
+    android:backgroundTint="@color/Xlight_purple"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="20dp"
+
+    >
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/profilePic"
+            android:layout_width="0dp"
+            android:layout_height="148dp"
+            android:layout_weight="1"
+            android:src="@drawable/profile" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginVertical="10dp"
-            android:layout_marginTop="-19dp"
-            android:layout_marginEnd="1dp"
-            android:background="@drawable/shape_1"
-            android:orientation="horizontal" >
+            android:layout_width="0dp"
+            android:layout_height="164dp"
+            android:layout_weight="2"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/DrName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dr. Pawan"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/spec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="psyco"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/Desc"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingStart="8dp"
+                android:text="Lorem ipsum dolor, consectetur adipiscing elit. Nunc v libero et velit interdum, ac mattis."
+                android:textSize="14sp" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:paddingStart="50dp">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="31dp"
+                    android:background="@drawable/shape_2"
+                    android:text="Book Now" />
+
+                <TextView
+                    android:id="@+id/rating"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="★ 5.0"
+                    android:textSize="16sp" />
+
+
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
@@ -30,8 +89,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@drawable/profile" />
-            </LinearLayout>
-        </LinearLayout>
-    </RelativeLayout>
 
-</LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
