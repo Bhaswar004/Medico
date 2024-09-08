@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@android:color/white"
+    android:padding="16dp"
+    android:layout_marginBottom="8dp"
+    android:elevation="4dp">
+
+    <!-- Doctor Image -->
+    <ImageView
+        android:id="@+id/doctorImage"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/circle_background"/>
+
+    <!-- Doctor Details -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- Doctor Name -->
+        <TextView
+            android:id="@+id/doctorName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dr. Upul"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"/>
+
+        <!-- Doctor Description -->
+        <TextView
+            android:id="@+id/doctorDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Worem consectetur adipiscing elit."
+            android:textSize="14sp"
+            android:textColor="@android:color/darker_gray"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="end">
+
+        <!-- Time -->
+        <TextView
+            android:id="@+id/appointmentTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12.50"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"/>
+
+        <!-- Counter (Optional) -->
+        <TextView
+            android:id="@+id/counter"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="end"
+            android:background="@drawable/circle_background"
+            android:gravity="center"
+            android:text="2"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+
+</LinearLayout>
