@@ -16,41 +16,38 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginAndSignUpWithFireBase"
         tools:targetApi="31">
-        <activity
 
+        <activity
             android:name=".Confirmation"
             android:exported="false" />
+
         <activity
             android:name=".Booking"
             android:exported="false"
             android:label="@string/title_activity_booking"
             android:theme="@style/Theme.LoginAndSignUpWithFireBase" />
+
         <activity
             android:name=".AllDoctorsActivity"
             android:exported="false" />
+
         <activity
-
-
             android:name=".SignUpActivity"
             android:exported="false" />
+
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
+
         <activity
             android:name=".WelcomeScreen"
-
             android:exported="true" />
-
-            android:exported="true">
-
-        </activity>
 
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

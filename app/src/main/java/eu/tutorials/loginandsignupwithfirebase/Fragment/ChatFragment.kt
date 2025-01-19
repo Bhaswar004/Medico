@@ -10,14 +10,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import eu.tutorials.loginandsignupwithfirebase.ChatPageActivity
 import eu.tutorials.loginandsignupwithfirebase.Doctor
-import eu.tutorials.loginandsignupwithfirebase.DoctorAdapter
+import eu.tutorials.loginandsignupwithfirebase.DoctorAdapterRecyclerView
 import eu.tutorials.loginandsignupwithfirebase.R
-
 
 class ChatFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var doctorAdapter: DoctorAdapter
+    private lateinit var doctorAdapter: DoctorAdapterRecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,14 +34,13 @@ class ChatFragment : Fragment() {
             // Add more doctors here
         )
 
-        doctorAdapter = DoctorAdapter(doctorList) { doctor ->
+        doctorAdapter = DoctorAdapterRecyclerView(doctorList) { doctor ->
             // Handle doctor click
             val intent = Intent(requireContext(), ChatPageActivity::class.java).apply {
                 putExtra("doctor_name", doctor.name)
                 putExtra("doctor_description", doctor.description)
                 putExtra("doctor_time", doctor.time)
                 putExtra("doctor_counter", doctor.counter)
-
             }
             startActivity(intent)
         }

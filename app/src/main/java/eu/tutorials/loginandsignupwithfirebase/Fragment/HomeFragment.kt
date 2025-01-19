@@ -29,9 +29,9 @@ class HomeFragment : Fragment() {
 
         // Create image list for the first slider
         val imageList1 = ArrayList<SlideModel>().apply {
-            add(SlideModel("https://bit.ly/2YoJ77H", "", ScaleTypes.CENTER_CROP))
-            add(SlideModel("https://bit.ly/2BteuF2", "Elephants and tigers may become extinct.", ScaleTypes.CENTER_CROP))
-            add(SlideModel("https://bit.ly/3fLJf72", "And people do that.", ScaleTypes.CENTER_CROP))
+            add(SlideModel("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpQbDmF11RXj-eEkim_1yKz_uGmEZhK0xZNg&s", "Consult to a doctor any time", ScaleTypes.CENTER_CROP))
+            add(SlideModel("https://www.freewebheaders.com/wp-content/gallery/healthcare_1/cache/medical-doctor-stethoscope-and-office-sign-web-header.jpg-nggid044058-ngg0dyn-1280x375x100-00f0w010c010r110f110r010t010.jpg", "we have the best doctors.", ScaleTypes.CENTER_CROP,))
+            add(SlideModel("https://static.vecteezy.com/system/resources/previews/002/700/984/non_2x/online-doctor-and-healthcare-web-banner-design-a-man-a-consulting-doctor-on-a-health-app-online-doctor-application-header-or-footer-banner-free-vector.jpg", "24x7 service available", ScaleTypes.FIT))
         }
 
         // Set image list to the first slider
@@ -39,9 +39,9 @@ class HomeFragment : Fragment() {
 
         // Create image list for the second slider
         val imageList2 = ArrayList<SlideModel>().apply {
-            add(SlideModel("https://bit.ly/2YoJ77H", "The animal population decreased by 58 percent in 42 years.", ScaleTypes.CENTER_CROP))
-            add(SlideModel("https://bit.ly/2BteuF2", "Elephants and tigers may become extinct.", ScaleTypes.CENTER_CROP))
-            add(SlideModel("https://bit.ly/3fLJf72", "And people do that.", ScaleTypes.CENTER_CROP))
+            add(SlideModel("https://static.vecteezy.com/system/resources/thumbnails/026/375/249/small_2x/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg", "Dr.A(Therapist)", ScaleTypes.CENTER_CROP))
+            add(SlideModel("https://images.theconversation.com/files/304957/original/file-20191203-66986-im7o5.jpg?ixlib=rb-4.1.0&q=45&auto=format&w=926&fit=clip", "Dr.B(pediatrician)", ScaleTypes.CENTER_CROP))
+            add(SlideModel("https://static.vecteezy.com/system/resources/thumbnails/028/287/555/small_2x/an-indian-young-female-doctor-isolated-on-green-ai-generated-photo.jpg", "Dr.C(Dermatologist)", ScaleTypes.CENTER_CROP))
         }
 
         // Set image list to the second slider

@@ -1,6 +1,5 @@
 package eu.tutorials.loginandsignupwithfirebase
 
-
 import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 
 class DoctorAdapter(private val context: Activity, private val arrayList: ArrayList<User>) : ArrayAdapter<User>(context, R.layout.doctor_list, arrayList) {
 
@@ -47,17 +47,10 @@ class DoctorAdapter(private val context: Activity, private val arrayList: ArrayL
     }
 }
 
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
-
-class DoctorAdapter(
+class DoctorAdapterRecyclerView(
     private val doctors: List<Doctor>,
     private val onDoctorClick: (Doctor) -> Unit
-) : RecyclerView.Adapter<DoctorAdapter.DoctorViewHolder>() {
+) : RecyclerView.Adapter<DoctorAdapterRecyclerView.DoctorViewHolder>() {
 
     inner class DoctorViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         init {
@@ -88,4 +81,3 @@ class DoctorAdapter(
 
     override fun getItemCount(): Int = doctors.size
 }
-

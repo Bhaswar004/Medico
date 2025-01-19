@@ -119,7 +119,6 @@
                             android:layout_height="202dp"
                             android:paddingTop="16dp"
                             app:iss_auto_cycle="true"
-
                             app:iss_delay="1000"
                             app:iss_period="1000"
                             app:iss_text_align="CENTER"
